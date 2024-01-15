@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "61f31a1c-e5e2-4c59-b4c4-9b51146abe71",
+		"name": "Drashti Odoo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32346651"
+	},
+	"item": [
+		{
+			"name": "Country Get All",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\"?>\n<methodCall>\n  <methodName>execute_kw</methodName>\n  <params>\n    <param>\n      <value><string>test_v17</string></value>\n    </param>\n    <param>\n      <value><string>2</string></value>\n    </param>\n    <param>\n      <value><string>admin</string></value>\n    </param>\n    <param>\n      <value><string>res.country</string></value>\n    </param>\n    <param>\n      <value><string>search_read</string></value>\n    </param>\n    <param>\n      <value>\n        <array>\n          <data/>\n        </array>\n      </value>\n    </param>\n    <param>\n      <value>\n        <struct>\n          <member>\n            <name>fields</name>\n            <value>\n              <array>\n                <data>\n                  <value><string>name</string></value>\n                  <value><string>code</string></value>\n                  <value><string>currency_id</string></value>\n                </data>\n              </array>\n            </value>\n          </member>\n          <member>\n            <name>order</name>\n            <value><string>name</string></value>\n          </member>\n        </struct>\n      </value>\n    </param>\n  </params>\n</methodCall>\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8069/xmlrpc/2/object",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8069",
+					"path": [
+						"xmlrpc",
+						"2",
+						"object"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Contact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Test\", \"phone\": \"+2045566565\", \"email\": \"test@gmail.com\", \"address\": {\"street\": \"125 Milross Ave\", \"city\": \"Vancouver\", \"zip\": \"7VG XG8\", \"state\": \"BC\", \"country\": \"Canada\"}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8069/create_custom_contact",
+					"host": [
+						"localhost"
+					],
+					"port": "8069",
+					"path": [
+						"create_custom_contact"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
